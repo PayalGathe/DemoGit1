@@ -1,4 +1,4 @@
-Steeping through cycle
+Steeping through cycle 
 
 ###########################################################
 # Copyright 2021, Tryon Solutions, Inc.
@@ -12,7 +12,7 @@ Steeping through cycle
 # No part of this file may be copied, modified, propagated,
 # or distributed except as authorized by the license.
 ###########################################################
-# Name: PAYAL GATHE
+# Name: PAYAL GATHE Demo file
 # Date: 
 # Description: 
 ############################################################ 
