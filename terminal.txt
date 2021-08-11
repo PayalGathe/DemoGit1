@@ -1,0 +1,18 @@
+@terminal
+Scenario: Terminal
+
+Given I assign "telnet" to variable "terminal_proto"
+And I assign "10.3.10.133:4650" to variable "terminal_server"
+And I assign "RDT004" to variable "device"
+And I assign "PAYAL.GATHE" to variable "username"
+And I assign "CYCPALLOC8" to variable "location"
+
+Given I open terminal connected to $terminal_server with answerback $device
+And I wait 10 seconds
+And I enter $device in terminal
+And I wait 10 seconds
+
+If I see cursor at line 4 column 2 in terminal
+	And I enter $username in terminal
+	And I wait 10 seconds
+EndIf

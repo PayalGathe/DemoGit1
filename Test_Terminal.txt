@@ -1,0 +1,58 @@
+Feature: Test Terminal
+
+Background:
+Given I assign "telnet" to variable "terminal_protocol"
+And I assign "10.3.10.133:4650" to variable "terminal_server"
+And I assign "RDT004" to variable "devcod"
+And I assign "PAYAL.GATHE" to variable "username"
+And I assign "CYCPALLOC8" to variable "location"
+
+
+Scenario:Terminal test
+Given I open terminal connected to $terminal_server with answerback $devcod
+And I wait 10 seconds
+And I enter $devcod in terminal
+And I wait 10 seconds
+If I see cursor at line 4 column 2 in terminal
+Then I enter USERNAME from credentials "PAYAL.GATHE" in terminal
+# And I enter $username in terminal
+And I wait 10 seconds
+EndIf
+
+If I see cursor at line 6 column 2 in terminal
+Then I enter PASSWORD from credentials "PAYAL.GATHE" in terminal
+And I wait 10 seconds
+EndIf
+
+If I see cursor at line 6 column 4 in terminal
+Then I enter $location in terminal
+And I wait 10 seconds
+EndIf
+
+If I see cursor at line 8 column 4 in terminal
+Then I enter "HAND" in terminal
+And I wait 10 seconds
+EndIf
+
+If I see cursor at line 10 column 4 in terminal
+Then I enter "CYCWKARE" in terminal
+And I wait 10 seconds
+EndIf
+
+If I see cursor at line 12 column 15 in terminal
+Then I enter "3" in terminal
+And I wait 10 seconds
+EndIf
+
+After Scenario:
+
+When I press keys F1 in terminal
+When I press keys Y in terminal
+Once I see "Press Enter" in terminal
+Then I press keys ENTER in terminal
+And I wait 30 seconds
+And I close terminal
+#Given I press keys "F1" in terminal
+#Then I reset terminal device "RDT006" in warehouse "WMD1"
+#And I close terminal
+

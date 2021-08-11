@@ -1,0 +1,28 @@
+Feature: Scenerio_Outline
+
+
+#Scenario :
+
+Scenario is list of actions,Steps used to perform test or task.Mostlty it begin with Given keyword
+
+#Scenario Outline:
+
+It is same as Scenario, but scenario outline executes multiple times, as per gicen data it is using.
+
+
+
+Scenario Outline: Login
+
+Given I open "Chrome" web browser
+Then I navigate to "http://10.3.10.133:8060" in web browser
+Once I see element "xPath://input[@id='loginUserName']" in web browser
+And I type <username> in element "id:loginUserName" in web browser
+And I type <password> in element "id:loginPassword" in web browser
+
+
+Examples:
+| username | password|
+| "PAYAL.GATHE" | "Pgathe@123"
+| "PAYAL.GATHE" | "Pgathe@1234"
+
+

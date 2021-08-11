@@ -1,0 +1,43 @@
+Steeping through cycle
+
+###########################################################
+# Copyright 2021, Tryon Solutions, Inc.
+# All rights reserved.  Proprietary and confidential.
+#
+# This file is subject to the license terms found at 
+# https://www.cycleautomation.com/end-user-license-agreement/
+#
+# The methods and techniques described herein are considered
+# confidential and/or trade secrets. 
+# No part of this file may be copied, modified, propagated,
+# or distributed except as authorized by the license.
+###########################################################
+# Name: PAYAL GATHE
+# Date: 
+# Description: 
+############################################################ 
+Feature: My Feature
+
+Background: 
+
+@exercise
+Scenario: Count the Steps
+############################################################ 
+# Begin your CycleScript in this scenario!
+############################################################
+ 
+ Given I assign 12 to variable "flight_steps"
+ Given I assign 3 to variable "building_Stories"
+ Given I assign 36 to variable "building_steps"
+ 
+ Given I assign $building_Stories to variable "total_steps"
+ And I assign 1 to variable "home_size"
+ And I assign 4 to variable "office_size"
+ And I assign 12 to variable "hotel_size"
+ 
+ Then I multiply variable "home_size" by 12
+ Then I echo "My home has "$home_size "stairs!"
+ 
+Given I import scenarios from "Utilities\UtilitiStepping.feature"
+When I execute scenario "Multiply"
+ 
